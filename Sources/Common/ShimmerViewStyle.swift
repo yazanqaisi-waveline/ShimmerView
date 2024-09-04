@@ -43,13 +43,33 @@ public struct ShimmerViewStyle: Equatable {
 
 public extension ShimmerViewStyle {
     static let `default` = ShimmerViewStyle(
-        baseColor: .red,
-        highlightColor: .blue,
-        duration: 1.2,
-        interval: 0.4,
+        baseColor: mainColor,
+        highlightColor: highlightColor,
+        duration: 1.5,
+        interval: 0.5,
         effectSpan: .points(
             120
         ),
         effectAngle: 0 * CGFloat.pi
     )
+
+    static var mainColor: UIColor {
+        .init(dynamicProvider: { trait -> UIColor in
+            if trait.userInterfaceStyle == .dark {
+                return .init(red: 205 / 255, green: 205 / 255, blue: 205 / 255, alpha: 1.0)
+            } else {
+                return .init(red: 34 / 255, green: 48 / 255, blue: 60 / 255, alpha: 1.0)
+            }
+        })
+    }
+
+    static var highlightColor: UIColor {
+        .init(dynamicProvider: { trait -> UIColor in
+            if trait.userInterfaceStyle == .dark {
+                return .init(red: 247/255, green: 247/255, blue: 247/255, alpha: 1.0)
+            } else {
+                return .init(red: 247/255, green: 247/255, blue: 247/255, alpha: 1.0)
+            }
+        })
+    }
 }

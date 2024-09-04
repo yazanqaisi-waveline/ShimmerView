@@ -22,4 +22,14 @@ public extension UIColor {
 
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
+
+    var mainColor: UIColor {
+        .init(dynamicProvider: { trait -> UIColor in
+            if trait.userInterfaceStyle == .dark {
+                return .init(red: 205 / 255, green: 205 / 255, blue: 205 / 255, alpha: 1.0)
+            } else {
+                return .init(red: 220 / 255, green: 220 / 255, blue: 220 / 255, alpha: 1.0)
+            }
+        })
+    }
 }
