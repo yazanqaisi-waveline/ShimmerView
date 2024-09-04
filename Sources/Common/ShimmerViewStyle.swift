@@ -48,9 +48,9 @@ public extension ShimmerViewStyle {
         duration: 1.5,
         interval: 0.5,
         effectSpan: .points(
-            120
+            220
         ),
-        effectAngle: 0 * CGFloat.pi
+        effectAngle: 0.25 * CGFloat.pi
     )
 
     static var mainColor: UIColor {
@@ -68,7 +68,7 @@ public extension ShimmerViewStyle {
             if trait.userInterfaceStyle == .dark {
                 return .init(red: 24 / 255, green: 38 / 255, blue: 50 / 255, alpha: 1.0)
             } else {
-                return .init(red: 205 / 255, green: 205 / 255, blue: 205 / 255, alpha: 1.0)
+                return .init(red: 235 / 255, green: 235 / 255, blue: 235 / 255, alpha: 1.0)
             }
         })
     }
