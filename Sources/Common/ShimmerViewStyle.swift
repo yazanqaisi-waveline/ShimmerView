@@ -58,7 +58,7 @@ public extension ShimmerViewStyle {
             if trait.userInterfaceStyle == .dark {
                 return .init(red: 34 / 255, green: 48 / 255, blue: 60 / 255, alpha: 1.0)
             } else {
-                return .init(red: 205 / 255, green: 205 / 255, blue: 205 / 255, alpha: 1.0)
+                return .init(red: 247 / 255, green: 247 / 255, blue: 247 / 255, alpha: 1.0)
             }
         })
     }
@@ -66,9 +66,9 @@ public extension ShimmerViewStyle {
     static var highlightColor: UIColor {
         .init(dynamicProvider: { trait -> UIColor in
             if trait.userInterfaceStyle == .dark {
-                return .black
+                return .init(red: 24 / 255, green: 38 / 255, blue: 50 / 255, alpha: 1.0)
             } else {
-                return .init(red: 247/255, green: 247/255, blue: 247/255, alpha: 1.0)
+                return .init(red: 205 / 255, green: 205 / 255, blue: 205 / 255, alpha: 1.0)
             }
         })
     }
