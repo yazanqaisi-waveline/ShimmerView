@@ -42,17 +42,20 @@ public struct ShimmerViewStyle: Equatable {
 }
 
 public extension ShimmerViewStyle {
-    static let `default` = ShimmerViewStyle(
+    static var `default` = ShimmerViewStyle(
         baseColor: mainColor,
         highlightColor: highlightColor,
-        duration: 1.5,
-        interval: 0.5,
+        duration: 1.0,
+        interval: 0,
         effectSpan: .points(
             220
         ),
-        effectAngle: 0.25 * CGFloat.pi
+        effectAngle: 0 * CGFloat.pi
     )
+}
 
+// MARK: Defaults Properties for ShimmerView Style
+private extension ShimmerViewStyle {
     static var mainColor: UIColor {
         .init(dynamicProvider: { trait -> UIColor in
             if trait.userInterfaceStyle == .dark {
